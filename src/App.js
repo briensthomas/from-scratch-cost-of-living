@@ -5,6 +5,8 @@ import {
   Route,
   Link
 } from 'react-router-dom';
+import ListPage from './ListPage.js';
+import DetailsPage from './DetailsPage.js';
 
 import './App.css';
 
@@ -29,14 +31,12 @@ export default function App() {
         {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
         <Switch>
-          <Route path="/about">
-            <About />
+          <Route exact path="/">
+            <ListPage />
           </Route>
-          <Route path="/users">
-            <Users />
-          </Route>
-          <Route path="/">
-            <Home />
+
+          <Route exact path="/COL-details/:id">
+            <DetailsPage />
           </Route>
         </Switch>
       </div>
