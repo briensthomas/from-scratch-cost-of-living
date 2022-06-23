@@ -5,11 +5,11 @@ import { Link } from 'react-router-dom';
 export default function Cost({ id, City, 
   COL_Index }) {
   return (
-    <div>
+    <div className='cost'>
       <Link key={City + id} to={`/COL-details/${id}`}>
-        <h2>{City}</h2>
-        <h3>{COL_Index}</h3>
+        <h3>{City}</h3>
       </Link>
+      <h4>Cost of Living Index: {COL_Index}</h4>
     </div>
   );
 }

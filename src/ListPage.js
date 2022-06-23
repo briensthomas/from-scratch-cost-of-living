@@ -14,16 +14,18 @@ export default function ListPage() {
       const from = ((currentPage - 1) * PER_PAGE);
       const to = ((currentPage * PER_PAGE) - 1);
       const costListData = await getCostOfLiving(from, to);
-
       setCosts(costListData);
     }
     fetchCostList();
-  });
+  }, [currentPage]);
 
   return (
     <div>
-      <button>Previous</button>
-      <button>Next</button>
+      <span>Page {currentPage}</span>
+      <div className='pagination'>
+        <button disabled={currentPage <= 1} onClick={() => setCurrentPage(currentPage - 1)}>Previous</button>
+        <button disabled={currentPage >= 29} onClick={() => setCurrentPage(currentPage + 1)}>Next</button>
+      </div>
 
       <CostList costs={costs} />
     </div>
