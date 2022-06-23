@@ -56,3 +56,18 @@
 .pagination button {
   margin: 5px;
 }
+
+.detail-page {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  align-items: center;
+}
+
+.cost-detail {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  border: 2px solid black;
+  align-items: center;
+}
